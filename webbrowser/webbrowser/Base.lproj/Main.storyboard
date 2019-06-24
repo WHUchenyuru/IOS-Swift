@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="webbrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1H-8o-smi">
+                                <rect key="frame" x="20" y="154" width="335" height="493"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSE-9J-fXG">
+                                <rect key="frame" x="20" y="40" width="335" height="44"/>
+                                <items>
+                                    <barButtonItem tag="1" title="&lt;" id="whn-9I-XaP">
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" id="F1a-AA-qrE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="2" title="&gt;" id="3Rg-zg-qlh">
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" id="xEF-s6-6jo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="3" systemItem="refresh" id="6FH-3V-OVk">
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" id="FFs-Zj-lXk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://cs.whu.edu.cn" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0zW-2R-mbj">
+                                <rect key="frame" x="20" y="104" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enterpress:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="r66-2Q-n7v"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="V1H-8o-smi" firstAttribute="top" secondItem="0zW-2R-mbj" secondAttribute="bottom" constant="20" id="1Ga-ej-H6q"/>
+                            <constraint firstItem="0zW-2R-mbj" firstAttribute="top" secondItem="gSE-9J-fXG" secondAttribute="bottom" constant="20" id="9Cb-Af-Bvs"/>
+                            <constraint firstItem="0zW-2R-mbj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DwY-Uh-8pz"/>
+                            <constraint firstItem="gSE-9J-fXG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="HOi-d3-icg"/>
+                            <constraint firstItem="V1H-8o-smi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="e1H-Sc-c6y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0zW-2R-mbj" secondAttribute="trailing" constant="20" id="h3b-Dr-izb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V1H-8o-smi" secondAttribute="bottom" constant="20" id="l3h-VJ-XNV"/>
+                            <constraint firstItem="gSE-9J-fXG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="l6Z-Ly-7Yy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V1H-8o-smi" secondAttribute="trailing" constant="20" id="pMu-0w-0QN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gSE-9J-fXG" secondAttribute="trailing" constant="20" id="qMW-AG-1Uu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="webbs" destination="V1H-8o-smi" id="XPZ-Of-xkR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
